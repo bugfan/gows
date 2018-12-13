@@ -9,4 +9,4 @@
 
 ## 使用
 1. 先执行 `go get github.com/gorilla/websocket`
-2. 启动程序 `go run main.go`
+2. 启动程序 `go run main.go -debug=true` // -debug参数指定是否将服务端日志打印出来
