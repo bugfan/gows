@@ -10,7 +10,7 @@
             <h1>ws </h1>
         </center>
         <button onclick="Conn()">链接</button>
-        <input id="url" type="text" value="127.0.0.1:9000/api/v1/ws" /> 发送人：
+        <input id="url" type="text" value="ws://127.0.0.1:9000/api/v1/ws" /> 发送人：
         <input id="username" type="text" /> 内容：
         <input id="text" type="text" style="width:300px" />
         <button onclick="send()">发送</button>
@@ -23,7 +23,7 @@
     function Conn() {
         //判断当前浏览器是否支持WebSocket  
         if ('WebSocket' in window) {
-            websocket = new WebSocket("ws://" + document.getElementById('url').value);
+            websocket = new WebSocket(document.getElementById('url').value);
         } else {
             alert('您的浏览器不支持 websocket！');
         }

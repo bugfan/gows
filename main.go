@@ -112,6 +112,8 @@ func TimingFeedback() {
 }
 func main() {
 	go TimingFeedback()
+	http.HandleFunc("/r/v1/ws", wsHandler)
 	http.HandleFunc("/api/v1/ws", wsHandler)
 	http.ListenAndServe(":"+Port, nil)
+	// http.ListenAndServeTLS(":"+Port, "./cert.pem", "./key.pem", nil)
 }
