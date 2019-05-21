@@ -12,3 +12,6 @@
 2. 进入gows目录 `cd xxxx/gows`
 3. 启动程序 `go run main.go -debug=true -p=9000` // -debug参数指定是否将服务端日志打印出来,-p指定监听端口
 
+## 容器化
+
+1. 切换到此目录 ，执行 `docker build -t YourTag .`

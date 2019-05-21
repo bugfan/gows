@@ -25,8 +25,8 @@ var (
 
 func init() {
 	// get cmd args
-	flag.StringVar(&Port, "p", "9000", "listen port")
-	flag.BoolVar(&Debug, "debug", false, "is or not debug")
+	flag.StringVar(&Port, "p", "9000", "listen port")       // if -p=8080 then listen port is 8080 not 9000
+	flag.BoolVar(&Debug, "debug", false, "is or not debug") // if -debug=true then print interactive log
 	flag.Parse()
 	// init data
 	MyConn.Data = make(map[string]*impl.Connection)
@@ -115,5 +115,7 @@ func main() {
 	http.HandleFunc("/r/v1/ws", wsHandler)
 	http.HandleFunc("/api/v1/ws", wsHandler)
 	http.ListenAndServe(":"+Port, nil)
+
+	// you can use https
 	// http.ListenAndServeTLS(":"+Port, "./cert.pem", "./key.pem", nil)
 }
