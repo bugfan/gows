@@ -1,5 +1,8 @@
 # golang WebSocket消息推送服务
 
+## 申明
+1. client.html和main.go只是我写的一个测试案例，主要用impl下面的代码
+
 ## 功能
 1. 维护所有在线链接
 2. 可以根据指定的key去快速定位链接进行推送消息
